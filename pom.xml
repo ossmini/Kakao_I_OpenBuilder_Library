@@ -15,4 +15,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library</url>
+        </repository>
+    </distributionManagement>
+
 </project>
