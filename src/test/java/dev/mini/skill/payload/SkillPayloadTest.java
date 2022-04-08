@@ -5,15 +5,14 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.mini.skill.payload.bot.Bot;
 import dev.mini.skill.payload.userrequest.UserRequest;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 class SkillPayloadTest {
 
@@ -29,28 +28,36 @@ class SkillPayloadTest {
     @DisplayName("UserRequest 포맷이 동일한지 검증한다.")
     void user_request_valid_test() throws JsonProcessingException {
         // given
+        ObjectMapper objectMapper = new ObjectMapper();
         UserRequest actual = skillPayload.getUserRequest();
 
         // when
-        String json = new ObjectMapper().writeValueAsString(actual);
-        UserRequest expected = new ObjectMapper().readValue(json, UserRequest.class);
+        String json = objectMapper.writeValueAsString(actual);
+        UserRequest expected = objectMapper.readValue(json, UserRequest.class);
 
         // that
-        assertThat(actual).isEqualTo(expected);
+        assertAll(
+                () -> assertThat(json).doesNotContain("null"),
+                () -> assertThat(actual).isEqualTo(expected)
+        );
     }
 
     @Test
     @DisplayName("Bot 포맷이 동일한지 검증한다.")
     void bot_valid_test() throws JsonProcessingException {
         // given
+        ObjectMapper objectMapper = new ObjectMapper();
         Bot actual = skillPayload.getBot();
 
         // when
-        String json = new ObjectMapper().writeValueAsString(actual);
-        Bot expected = new ObjectMapper().readValue(json, Bot.class);
+        String json = objectMapper.writeValueAsString(actual);
+        Bot expected = objectMapper.readValue(json, Bot.class);
 
         // that
-        assertThat(actual).isEqualTo(expected);
+        assertAll(
+                () -> assertThat(json).doesNotContain("null"),
+                () -> assertThat(actual).isEqualTo(expected)
+        );
     }
 
     private void loadSkillPayloadJson() throws IOException {
