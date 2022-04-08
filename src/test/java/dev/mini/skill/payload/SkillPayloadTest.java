@@ -4,8 +4,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.mini.skill.payload.bot.Bot;
+import dev.mini.skill.payload.intent.Intent;
 import dev.mini.skill.payload.userrequest.UserRequest;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -52,6 +55,24 @@ class SkillPayloadTest {
         // when
         String json = objectMapper.writeValueAsString(actual);
         Bot expected = objectMapper.readValue(json, Bot.class);
+
+        // that
+        assertAll(
+                () -> assertThat(json).doesNotContain("null"),
+                () -> assertThat(actual).isEqualTo(expected)
+        );
+    }
+
+    @Test
+    @DisplayName("Intent 포맷이 동일한지 검증한다.")
+    void intent_valid_test() throws JsonProcessingException {
+        // given
+        ObjectMapper objectMapper = new ObjectMapper();
+        Intent actual = skillPayload.getIntent();
+
+        // when
+        String json = objectMapper.writeValueAsString(actual);
+        Intent expected = objectMapper.readValue(json, Intent.class);
 
         // that
         assertAll(

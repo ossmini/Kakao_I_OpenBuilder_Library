@@ -4,15 +4,20 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.mini.skill.payload.bot.Bot;
+import dev.mini.skill.payload.intent.Intent;
 import dev.mini.skill.payload.userrequest.UserRequest;
 
 public class SkillPayload {
-
     private Bot bot;
+    private Intent intent;
     private UserRequest userRequest;
 
     public Bot getBot() {
         return bot;
+    }
+
+    public Intent getIntent() {
+        return intent;
     }
 
     public UserRequest getUserRequest() {
@@ -22,7 +27,9 @@ public class SkillPayload {
     @Override
     public String toString() {
         return "SkillPayload{" +
-                "userRequest=" + userRequest +
+                "bot=" + bot +
+                ", intent=" + intent +
+                ", userRequest=" + userRequest +
                 '}';
     }
 
