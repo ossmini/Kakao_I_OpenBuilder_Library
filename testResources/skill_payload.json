@@ -1,0 +1,75 @@
+{
+  "bot": {
+    "id": "<봇 id>",
+    "name": "<봇 이름>"
+  },
+  "intent": {
+    "id": "<블록 id>",
+    "name": "지식+",
+    "extra": {
+      "reason": {
+        "code": 1,
+        "message": "OK"
+      },
+      "knowledge": {
+        "responseType": "skill",
+        "matchedKnowledges": [
+          {
+            "categories": [
+              "<카테고리 1>",
+              "<카테고리 2>",
+              "<카테고리 3>",
+              "<카테고리 4>"
+            ],
+            "question": "<질문>",
+            "answer": "<답변>",
+            "imageUrl": "<이미지 url>",
+            "landingUrl": "<랜딩 url>"
+          },
+          {
+            "categories": [
+              "<카테고리 1>",
+              "<카테고리 2>",
+              "<카테고리 3>",
+              "<카테고리 4>"
+            ],
+            "question": "<질문>",
+            "answer": "<답변>",
+            "imageUrl": "<이미지 url>",
+            "landingUrl": "<랜딩 url>"
+          }
+        ]
+      }
+    }
+  },
+  "action": {
+    "id": "<액션 id>",
+    "name": "<액션 이름>",
+    "params": {},
+    "detailParams": {},
+    "clientExtra": {}
+  },
+  "userRequest": {
+    "block": {
+      "id": "<블록 id>",
+      "name": "<블록 이름>"
+    },
+    "user": {
+      "id": "<사용자 botUserKey>",
+      "type": "botUserKey",
+      "properties": {
+        "plusfriendUserKey": "<카카오톡 채널 사용자 id>",
+        "appUserId": "<app user id>",
+        "isFriend" : true
+      }
+    },
+    "utterance": "<사용자 발화>",
+    "params": {
+      "surface": "BuilderBotTest",
+      "ignoreMe": "true"
+    },
+    "lang": "kr",
+    "timezone": "Asia/Seoul"
+  },
+  "contexts": []
+}
