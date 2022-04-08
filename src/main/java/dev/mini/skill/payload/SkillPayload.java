@@ -3,11 +3,17 @@ package dev.mini.skill.payload;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.mini.skill.payload.bot.Bot;
 import dev.mini.skill.payload.userrequest.UserRequest;
 
 public class SkillPayload {
 
+    private Bot bot;
     private UserRequest userRequest;
+
+    public Bot getBot() {
+        return bot;
+    }
 
     public UserRequest getUserRequest() {
         return userRequest;
