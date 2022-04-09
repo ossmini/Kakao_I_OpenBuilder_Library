@@ -1,4 +1,4 @@
-package dev.mini.skill.payload.action;
+package dev.mini.kakaoiopenbuilder.skill.payload.action;
 
 import java.util.Map;
 import java.util.Objects;
