@@ -45,8 +45,28 @@
   "action": {
     "id": "<액션 id>",
     "name": "<액션 이름>",
-    "params": {},
-    "detailParams": {},
+    "params": {
+      "sys_date": "{\"dateTag\": \"Friday\", \"dateHeadword\": \"\", \"month\": \"\", \"year\": \"\", \"date\": \"2018-11-23\", \"day\": \"\"}",
+      "sys_location": "강남",
+      "sys_number": "{\"amount\": 1, \"unit\": }"
+    },
+    "detailParams": {
+      "sys_date": {
+        "origin": "금요일",
+        "value": "{\"dateTag\": \"Friday\", \"dateHeadword\":  \"\", \"month\":  \"\", \"year\": \"\", \"date\": \"2018-11-23\", \"day\": \"\"}",
+        "groupName": ""
+      },
+      "sys_location": {
+        "origin": "강남",
+        "value": "강남",
+        "groupName": ""
+      },
+      "sys_number": {
+        "origin": "1",
+        "value": "{\"amount\": 1, \"unit\": \"\"}",
+        "groupName": ""
+      }
+    },
     "clientExtra": {}
   },
   "userRequest": {
