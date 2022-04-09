@@ -1,12 +1,12 @@
-package dev.mini.skill.payload;
+package dev.mini.kakaoiopenbuilder.skill.payload;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.mini.skill.payload.action.Action;
-import dev.mini.skill.payload.bot.Bot;
-import dev.mini.skill.payload.intent.Intent;
-import dev.mini.skill.payload.userrequest.UserRequest;
+import dev.mini.kakaoiopenbuilder.skill.payload.action.Action;
+import dev.mini.kakaoiopenbuilder.skill.payload.intent.Intent;
+import dev.mini.kakaoiopenbuilder.skill.payload.bot.Bot;
+import dev.mini.kakaoiopenbuilder.skill.payload.userrequest.UserRequest;
 
 import java.util.Objects;
 

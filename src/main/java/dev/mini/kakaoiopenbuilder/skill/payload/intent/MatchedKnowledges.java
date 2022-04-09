@@ -1,4 +1,4 @@
-package dev.mini.skill.payload.intent;
+package dev.mini.kakaoiopenbuilder.skill.payload.intent;
 
 import java.util.List;
 import java.util.Objects;

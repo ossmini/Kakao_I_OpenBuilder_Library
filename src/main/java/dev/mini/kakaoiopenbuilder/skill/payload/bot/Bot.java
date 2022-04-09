@@ -1,8 +1,8 @@
-package dev.mini.skill.payload.userrequest;
+package dev.mini.kakaoiopenbuilder.skill.payload.bot;
 
 import java.util.Objects;
 
-public class Block {
+public class Bot {
     private String id;
     private String name;
 
@@ -18,8 +18,8 @@ public class Block {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Block block = (Block) o;
-        return Objects.equals(id, block.id) && Objects.equals(name, block.name);
+        Bot bot = (Bot) o;
+        return Objects.equals(id, bot.id) && Objects.equals(name, bot.name);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Block {
 
     @Override
     public String toString() {
-        return "Block{" +
+        return "Bot{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 '}';
