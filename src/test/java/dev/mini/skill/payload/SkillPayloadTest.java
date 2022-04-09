@@ -3,6 +3,7 @@ package dev.mini.skill.payload;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.mini.skill.payload.action.Action;
 import dev.mini.skill.payload.bot.Bot;
 import dev.mini.skill.payload.intent.Intent;
 import dev.mini.skill.payload.userrequest.UserRequest;
@@ -28,8 +29,26 @@ class SkillPayloadTest {
     }
 
     @Test
+    @DisplayName("SkillPayload 포맷이 동일한지 검증한다.")
+    void skillPayloadValidTest() throws JsonProcessingException {
+        // given
+        ObjectMapper objectMapper = new ObjectMapper();
+        SkillPayload actual = skillPayload;
+
+        // when
+        String json = objectMapper.writeValueAsString(actual);
+        SkillPayload expected = objectMapper.readValue(json, SkillPayload.class);
+
+        // that
+        assertAll(
+                () -> assertThat(json).doesNotContain("null"),
+                () -> assertThat(actual).isEqualTo(expected)
+        );
+    }
+
+    @Test
     @DisplayName("UserRequest 포맷이 동일한지 검증한다.")
-    void user_request_valid_test() throws JsonProcessingException {
+    void userRequestValidTest() throws JsonProcessingException {
         // given
         ObjectMapper objectMapper = new ObjectMapper();
         UserRequest actual = skillPayload.getUserRequest();
@@ -47,7 +66,7 @@ class SkillPayloadTest {
 
     @Test
     @DisplayName("Bot 포맷이 동일한지 검증한다.")
-    void bot_valid_test() throws JsonProcessingException {
+    void botValidTest() throws JsonProcessingException {
         // given
         ObjectMapper objectMapper = new ObjectMapper();
         Bot actual = skillPayload.getBot();
@@ -65,7 +84,7 @@ class SkillPayloadTest {
 
     @Test
     @DisplayName("Intent 포맷이 동일한지 검증한다.")
-    void intent_valid_test() throws JsonProcessingException {
+    void intentValidTest() throws JsonProcessingException {
         // given
         ObjectMapper objectMapper = new ObjectMapper();
         Intent actual = skillPayload.getIntent();
@@ -73,6 +92,24 @@ class SkillPayloadTest {
         // when
         String json = objectMapper.writeValueAsString(actual);
         Intent expected = objectMapper.readValue(json, Intent.class);
+
+        // that
+        assertAll(
+                () -> assertThat(json).doesNotContain("null"),
+                () -> assertThat(actual).isEqualTo(expected)
+        );
+    }
+
+    @Test
+    @DisplayName("Action 포맷이 동일한지 검증한다.")
+    void actionValidTest() throws JsonProcessingException {
+        // given
+        ObjectMapper objectMapper = new ObjectMapper();
+        Action actual = skillPayload.getAction();
+
+        // when
+        String json = objectMapper.writeValueAsString(actual);
+        Action expected = objectMapper.readValue(json, Action.class);
 
         // that
         assertAll(
