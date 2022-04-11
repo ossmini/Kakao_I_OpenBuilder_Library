@@ -9,6 +9,45 @@
     <version>0.0.0</version>
     <packaging>jar</packaging>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>riyenas0925</id>
+            <name>Kang Dongmin</name>
+            <email>riyenas0925@gmail.com</email>
+        </developer>
+        <developer>
+            <id>donghwansuh</id>
+            <name>Suh Donghwan</name>
+            <email>sdh7693@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library</url>
+        <connection>https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library.git</connection>
+        <developerConnection>https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library.git</developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library/issues</url>
+    </issueManagement>
+
+    <description>Kakao I OpenBuilder Library is the unofficial Kakao chatbot library</description>
+
+    <ciManagement>
+        <system>Github Actions</system>
+        <url>https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library/actions</url>
+    </ciManagement>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
