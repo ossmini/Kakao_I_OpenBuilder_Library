@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -26,12 +28,15 @@ class SkillDataTest {
     void skillDataValidTest() {
         // given
         SkillResponse actual = skillData;
+        Map<String, String> dataMap = new HashMap<String, String>(){{
+            put("name","Ryan");
+            put("position","Senior Managing Director");
+        }};
 
         // when
         SkillResponse expected = SKillResponseBuilder.builder()
                 .addData("msg","HI")
-                .addData("name","Ryan")
-                .addData("position","Senior Managing Director")
+                .addData(dataMap)
                 .build();
 
         // that

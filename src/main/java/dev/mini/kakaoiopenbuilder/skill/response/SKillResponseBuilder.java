@@ -26,7 +26,12 @@ public class SKillResponseBuilder {
     }
 
     public SKillResponseBuilder addData(String key, String value) {
-        data.put(key, value);
+        this.data.put(key, value);
+        return this;
+    }
+
+    public SKillResponseBuilder addData(Map<String, String> data) {
+        this.data.putAll(data);
         return this;
     }
 
