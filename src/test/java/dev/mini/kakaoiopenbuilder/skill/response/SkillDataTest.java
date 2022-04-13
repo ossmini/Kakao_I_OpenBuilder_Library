@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class SkillDataTest {
 
     private static final String SKILL_RESPONSE_DATA_TEST_FILE_PATH = "testResources/skill_response_data.json";
-    private SkillData skillData;
+    private SkillResponse skillData;
 
     @BeforeEach
     public void setUp() throws IOException {
@@ -25,10 +25,10 @@ class SkillDataTest {
     @DisplayName("SkillData 포맷이 동일한지 검증한다.")
     void skillDataValidTest() {
         // given
-        SkillData actual = skillData;
+        SkillResponse actual = skillData;
 
         // when
-        SkillData expected = SkillDataBuilder.builder()
+        SkillResponse expected = SKillResponseBuilder.builder()
                 .addData("msg","HI")
                 .addData("name","Ryan")
                 .addData("position","Senior Managing Director")
@@ -42,7 +42,7 @@ class SkillDataTest {
         ObjectMapper objectMapper = new ObjectMapper();
 
         try(InputStream fileStream = new FileInputStream(SKILL_RESPONSE_DATA_TEST_FILE_PATH)) {
-            skillData = objectMapper.readValue(fileStream, SkillData.class);
+            skillData = objectMapper.readValue(fileStream, SkillResponse.class);
         }
     }
 
