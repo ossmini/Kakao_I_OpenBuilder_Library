@@ -15,17 +15,17 @@ public class Main {
         System.out.println("Hello Kakao I OpenBuilder Java Library!");
 
         // example: SkillResponse Data
-        Map<String, String> dataMap = new HashMap<String, String>(){{
-            put("msg","HI");
-            put("name","Ryan");
-            put("position","Senior Managing Director");
-        }};
+        Map<String, String> dataMap = new HashMap<String, String>();
+        dataMap.put("name","Ryan");
+        dataMap.put("position","Senior Managing Director");
 
         SkillResponse skillResponse = SKillResponseBuilder.builder()
+                .addData("msg","HI")
                 .addData(dataMap)
                 .build();
 
-        System.out.println("Skill Response Data example: " + objectMapper.writeValueAsString(skillResponse));
+        System.out.println("Skill Response Data example");
+        System.out.println(objectMapper.writeValueAsString(skillResponse));
     }
 
 }

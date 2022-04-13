@@ -1,6 +1,8 @@
 package dev.mini.kakaoiopenbuilder.skill.response;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.mini.kakaoiopenbuilder.skill.response.context.ContextControl;
 import dev.mini.kakaoiopenbuilder.skill.response.template.Template;
 
@@ -9,16 +11,18 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SkillResponse {
-    private String version = "2.0";
-    private Template template;
-    private ContextControl context;
-    private Map<String, String> data;
+    private final String version;
+    private final Template template;
+    private final ContextControl context;
+    private final Map<String, String> data;
 
-    public SkillResponse() {
-
-    }
-
-    public SkillResponse(Template template, ContextControl context, Map<String, String> data) {
+    @JsonCreator
+    public SkillResponse(
+            @JsonProperty("template") Template template,
+            @JsonProperty("context") ContextControl context,
+            @JsonProperty("data") Map<String, String> data
+    ) {
+        this.version = "2.0";
         this.template = template;
         this.context = context;
         this.data = data;

@@ -28,10 +28,9 @@ class SkillDataTest {
     void skillDataValidTest() {
         // given
         SkillResponse actual = skillData;
-        Map<String, String> dataMap = new HashMap<String, String>(){{
-            put("name","Ryan");
-            put("position","Senior Managing Director");
-        }};
+        Map<String, String> dataMap = new HashMap<>();
+        dataMap.put("name","Ryan");
+        dataMap.put("position","Senior Managing Director");
 
         // when
         SkillResponse expected = SKillResponseBuilder.builder()
