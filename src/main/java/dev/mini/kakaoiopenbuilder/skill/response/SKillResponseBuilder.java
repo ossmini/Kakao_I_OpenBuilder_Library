@@ -11,7 +11,7 @@ public class SKillResponseBuilder {
     private ContextControl context;
     private Map<String, String> data = new HashMap<>();
 
-    static public SKillResponseBuilder builder() {
+    public static SKillResponseBuilder builder() {
         return new SKillResponseBuilder();
     }
 

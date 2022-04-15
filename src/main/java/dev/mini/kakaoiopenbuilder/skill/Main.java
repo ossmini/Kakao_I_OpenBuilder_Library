@@ -7,15 +7,17 @@ import dev.mini.kakaoiopenbuilder.skill.response.SkillResponse;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class Main {
-    public static void main(String[] args) throws JsonProcessingException {
-        ObjectMapper objectMapper = new ObjectMapper();
+    private static final Logger log = Logger.getLogger(Main.class.getName());
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
-        System.out.println("Hello Kakao I OpenBuilder Java Library!");
+    public static void main(String[] args) throws JsonProcessingException {
+        log.info("Hello Kakao I OpenBuilder Java Library!");
 
         // example: SkillResponse Data
-        Map<String, String> dataMap = new HashMap<String, String>();
+        Map<String, String> dataMap = new HashMap<>();
         dataMap.put("name","Ryan");
         dataMap.put("position","Senior Managing Director");
 
@@ -24,8 +26,10 @@ public class Main {
                 .addData(dataMap)
                 .build();
 
-        System.out.println("Skill Response Data example");
-        System.out.println(objectMapper.writeValueAsString(skillResponse));
+        String json = objectMapper.writeValueAsString(skillResponse);
+
+        log.info("Skill Response Data example");
+        log.info(json);
     }
 
 }
