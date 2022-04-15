@@ -118,6 +118,21 @@ class SkillPayloadTest {
         );
     }
 
+    @Test
+    @DisplayName("parse 메서드를 통해 json 문자열을 SkillPayload 객체로 변환할 수 있다.")
+    void skillPayloadParse() throws JsonProcessingException {
+        // given
+        ObjectMapper objectMapper = new ObjectMapper();
+        SkillPayload actual = skillPayload;
+
+        // when
+        String json = objectMapper.writeValueAsString(actual);
+        SkillPayload expected = SkillPayload.parse(json);
+
+        // that
+        assertThat(actual.toString()).hasToString(expected.toString());
+    }
+
     private void loadSkillPayloadJson() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
