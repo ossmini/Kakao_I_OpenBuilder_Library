@@ -39,7 +39,7 @@ class SkillDataTest {
                 .build();
 
         // that
-        assertThat(actual).isEqualTo(expected);
+        assertThat(actual.toString()).hasToString(expected.toString());
     }
 
     private void loadSkillResponseDataJson() throws IOException {

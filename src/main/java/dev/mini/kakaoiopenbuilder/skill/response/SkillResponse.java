@@ -7,7 +7,6 @@ import dev.mini.kakaoiopenbuilder.skill.response.context.ContextControl;
 import dev.mini.kakaoiopenbuilder.skill.response.template.Template;
 
 import java.util.Map;
-import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class SkillResponse {
@@ -42,19 +41,6 @@ public class SkillResponse {
 
     public Map<String, String> getData() {
         return data;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SkillResponse response = (SkillResponse) o;
-        return Objects.equals(version, response.version) && Objects.equals(template, response.template) && Objects.equals(context, response.context) && Objects.equals(data, response.data);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(version, template, context, data);
     }
 
     @Override

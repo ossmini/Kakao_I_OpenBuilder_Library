@@ -1,7 +1,6 @@
 package dev.mini.kakaoiopenbuilder.skill.payload.action;
 
 import java.util.Map;
-import java.util.Objects;
 
 public class Action {
     private String id;
@@ -28,19 +27,6 @@ public class Action {
 
     public Map<String, Object> getClientExtra() {
         return clientExtra;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Action action = (Action) o;
-        return Objects.equals(id, action.id) && Objects.equals(name, action.name) && Objects.equals(params, action.params) && Objects.equals(detailParams, action.detailParams) && Objects.equals(clientExtra, action.clientExtra);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, params, detailParams, clientExtra);
     }
 
     @Override

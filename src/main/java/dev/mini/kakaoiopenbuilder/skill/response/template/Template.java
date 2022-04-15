@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
-import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Template {
@@ -20,19 +19,6 @@ public class Template {
 
     public List<Output> getOutputs() {
         return output;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Template template = (Template) o;
-        return Objects.equals(output, template.output);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(output);
     }
 
     @Override
