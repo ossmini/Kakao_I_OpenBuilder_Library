@@ -9,7 +9,7 @@ import dev.mini.kakaoiopenbuilder.skill.response.template.Template;
 import java.util.Map;
 import java.util.Objects;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class SkillResponse {
     private final String version;
     private final Template template;
