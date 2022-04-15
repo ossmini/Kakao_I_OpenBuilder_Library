@@ -28,7 +28,7 @@ class SkillResponseTest {
                 .build();
 
         // that
-        assertThat(actual.toString()).isEqualTo(expected.toString());
+        assertThat(actual.toString()).hasToString(expected.toString());
     }
 
     private SkillResponse loadSkillResponseTemplateJson(String filePath) throws IOException {

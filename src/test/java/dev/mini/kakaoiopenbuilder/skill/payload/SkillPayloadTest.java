@@ -3,10 +3,10 @@ package dev.mini.kakaoiopenbuilder.skill.payload;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.mini.kakaoiopenbuilder.skill.payload.intent.Intent;
-import dev.mini.kakaoiopenbuilder.skill.payload.bot.Bot;
-import dev.mini.kakaoiopenbuilder.skill.payload.userrequest.UserRequest;
 import dev.mini.kakaoiopenbuilder.skill.payload.action.Action;
+import dev.mini.kakaoiopenbuilder.skill.payload.bot.Bot;
+import dev.mini.kakaoiopenbuilder.skill.payload.intent.Intent;
+import dev.mini.kakaoiopenbuilder.skill.payload.userrequest.UserRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -42,7 +42,7 @@ class SkillPayloadTest {
         // that
         assertAll(
                 () -> assertThat(json).doesNotContain("null"),
-                () -> assertThat(actual).isEqualTo(expected)
+                () -> assertThat(actual.toString()).hasToString(expected.toString())
         );
     }
 
@@ -60,7 +60,7 @@ class SkillPayloadTest {
         // that
         assertAll(
                 () -> assertThat(json).doesNotContain("null"),
-                () -> assertThat(actual).isEqualTo(expected)
+                () -> assertThat(actual.toString()).hasToString(expected.toString())
         );
     }
 
@@ -78,7 +78,7 @@ class SkillPayloadTest {
         // that
         assertAll(
                 () -> assertThat(json).doesNotContain("null"),
-                () -> assertThat(actual).isEqualTo(expected)
+                () -> assertThat(actual.toString()).hasToString(expected.toString())
         );
     }
 
@@ -96,7 +96,7 @@ class SkillPayloadTest {
         // that
         assertAll(
                 () -> assertThat(json).doesNotContain("null"),
-                () -> assertThat(actual).isEqualTo(expected)
+                () -> assertThat(actual.toString()).hasToString(expected.toString())
         );
     }
 
@@ -114,7 +114,7 @@ class SkillPayloadTest {
         // that
         assertAll(
                 () -> assertThat(json).doesNotContain("null"),
-                () -> assertThat(actual).isEqualTo(expected)
+                () -> assertThat(actual.toString()).hasToString(expected.toString())
         );
     }
 

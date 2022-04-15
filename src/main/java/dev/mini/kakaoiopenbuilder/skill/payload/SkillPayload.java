@@ -4,11 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.mini.kakaoiopenbuilder.skill.payload.action.Action;
-import dev.mini.kakaoiopenbuilder.skill.payload.intent.Intent;
 import dev.mini.kakaoiopenbuilder.skill.payload.bot.Bot;
+import dev.mini.kakaoiopenbuilder.skill.payload.intent.Intent;
 import dev.mini.kakaoiopenbuilder.skill.payload.userrequest.UserRequest;
-
-import java.util.Objects;
 
 public class SkillPayload {
     private Bot bot;
@@ -30,19 +28,6 @@ public class SkillPayload {
 
     public UserRequest getUserRequest() {
         return userRequest;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SkillPayload that = (SkillPayload) o;
-        return Objects.equals(bot, that.bot) && Objects.equals(intent, that.intent) && Objects.equals(action, that.action) && Objects.equals(userRequest, that.userRequest);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(bot, intent, action, userRequest);
     }
 
     @Override
