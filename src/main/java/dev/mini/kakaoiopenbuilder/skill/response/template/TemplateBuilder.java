@@ -24,7 +24,7 @@ public class TemplateBuilder {
     }
 
     private void isValidComponent() {
-        if(output.size() < 1 || output.size() > 3) {
+        if(output.isEmpty() || output.size() > 3) {
             throw new ComponentsOutOfBoundsException();
         }
     }
