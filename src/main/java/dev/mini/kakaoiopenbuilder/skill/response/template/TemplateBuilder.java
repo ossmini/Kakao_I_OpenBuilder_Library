@@ -1,5 +1,6 @@
 package dev.mini.kakaoiopenbuilder.skill.response.template;
 
+import dev.mini.kakaoiopenbuilder.skill.exception.ComponentsOutOfBoundsException;
 import dev.mini.kakaoiopenbuilder.skill.response.component.SimpleText;
 
 import java.util.ArrayList;
@@ -18,7 +19,14 @@ public class TemplateBuilder {
     }
 
     public Template build() {
+        isValidComponent();
         return new Template(output);
+    }
+
+    private void isValidComponent() {
+        if(output.size() < 1 || output.size() > 3) {
+            throw new ComponentsOutOfBoundsException();
+        }
     }
 
 }
