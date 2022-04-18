@@ -17,6 +17,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class SkillResponseTest {
 
     private static final String SKILL_SIMPLE_TEXT_FILE_PATH = "testResources/skill_response_simple_text.json";
+    private static final String SKILL_SIMPLE_IMAGE_FILE_PATH = "testResources/skill_response_simple_image.json";
 
     @Test
     @DisplayName("출력할 수 있는 Skill Component는 1개 미만일 수 없다.")
@@ -53,6 +54,24 @@ class SkillResponseTest {
         // when
         Template expected = TemplateBuilder.builder()
                 .addSimpleText("간단한 텍스트 요소입니다.")
+                .build();
+
+        // that
+        assertThat(actual.toString()).hasToString(expected.toString());
+    }
+
+    @Test
+    @DisplayName("SimpleImage 포맷이 동일한지 검증한다.")
+    void validSimpleImage() throws IOException {
+        // given
+        Template actual = loadSkillResponseTemplateJson(SKILL_SIMPLE_IMAGE_FILE_PATH).getTemplate();
+
+        String imageUrl = "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg";
+        String altText = "보물상자입니다";
+
+        // when
+        Template expected = TemplateBuilder.builder()
+                .addSimpleImage(imageUrl, altText)
                 .build();
 
         // that
