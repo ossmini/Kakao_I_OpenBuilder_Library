@@ -1,6 +1,7 @@
 package dev.mini.kakaoiopenbuilder.skill.response.template;
 
 import dev.mini.kakaoiopenbuilder.skill.exception.ComponentsOutOfBoundsException;
+import dev.mini.kakaoiopenbuilder.skill.response.component.SimpleImage;
 import dev.mini.kakaoiopenbuilder.skill.response.component.SimpleText;
 
 import java.util.ArrayList;
@@ -14,7 +15,14 @@ public class TemplateBuilder {
     }
 
     public TemplateBuilder addSimpleText(String text) {
-        output.add(new Output("simpleText", new SimpleText(text)));
+        SimpleText simpleText = new SimpleText(text);
+        output.add(new Output("simpleText", simpleText));
+        return this;
+    }
+
+    public TemplateBuilder addSimpleImage(String imageUrl, String altText) {
+        SimpleImage simpleImage = new SimpleImage(imageUrl, altText);
+        output.add(new Output("simpleImage", simpleImage));
         return this;
     }
 
