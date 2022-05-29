@@ -115,6 +115,7 @@
                     <excludes>
                         <exclude>dev/mini/**/Main.class</exclude>
                         <exclude>dev/mini/**/util/*.class</exclude>
+                        <exclude>dev/mini/**/response/common/*.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>
