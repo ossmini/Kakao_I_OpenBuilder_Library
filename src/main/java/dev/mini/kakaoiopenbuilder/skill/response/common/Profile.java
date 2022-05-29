@@ -16,20 +16,20 @@ public class Profile {
         this.imageUrl = imageUrl;
     }
 
-    @Override
-    public String toString() {
-        return "Profile{" +
-                "nickname='" + nickname + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                '}';
-    }
-
     public String getNickname() {
         return nickname;
     }
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "Profile{" +
+                "nickname='" + nickname + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
     }
 
 }

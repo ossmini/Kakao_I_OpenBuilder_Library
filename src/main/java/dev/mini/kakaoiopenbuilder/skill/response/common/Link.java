@@ -8,15 +8,6 @@ public class Link {
     private String mobile;
     private String web;
 
-    @Override
-    public String toString() {
-        return "Link{" +
-                "pc='" + pc + '\'' +
-                ", mobile='" + mobile + '\'' +
-                ", web='" + web + '\'' +
-                '}';
-    }
-
     @JsonCreator
     public Link(
             @JsonProperty("pc") String pc,
@@ -28,7 +19,7 @@ public class Link {
         this.web = web;
     }
 
-    public String getPC() {
+    public String getPc() {
         return pc;
     }
 
@@ -38,6 +29,15 @@ public class Link {
 
     public String getWeb() {
         return web;
+    }
+
+    @Override
+    public String toString() {
+        return "Link{" +
+                "pc='" + pc + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", web='" + web + '\'' +
+                '}';
     }
 
 }

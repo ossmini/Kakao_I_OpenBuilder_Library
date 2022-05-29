@@ -13,7 +13,7 @@ public class Forwardable {
         this.forwardable = forwardable;
     }
 
-    public boolean getForwardable() {
+    public boolean isForwardable() {
         return forwardable;
     }
 
@@ -23,4 +23,5 @@ public class Forwardable {
                 "forwardable=" + forwardable +
                 '}';
     }
+
 }

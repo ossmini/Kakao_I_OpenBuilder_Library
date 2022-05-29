@@ -33,12 +33,16 @@ public class Button {
         this.extra = extra;
     }
 
-    public String getlabel() {
+    public String getLabel() {
         return label;
     }
 
     public String getAction() {
         return action;
+    }
+
+    public String getWebLinkUrl() {
+        return webLinkUrl;
     }
 
     public String getMessageText() {
@@ -69,4 +73,5 @@ public class Button {
                 ", extra=" + extra +
                 '}';
     }
+
 }
