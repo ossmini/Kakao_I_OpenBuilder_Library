@@ -25,6 +25,10 @@ public class Thumbnail {
         this.height = height;
     }
 
+    public static Thumbnail of(String imageUrl) {
+        return new Thumbnail(imageUrl, null, false, 0, 0);
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }
