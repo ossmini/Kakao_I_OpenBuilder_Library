@@ -33,6 +33,14 @@ public class Button {
         this.extra = extra;
     }
 
+    public static Button message(String label, String messageText) {
+        return new Button(label, "message", null, messageText, null, null, null);
+    }
+
+    public static Button weblink(String label, String webLinkUrl) {
+        return new Button(label, "webLink", webLinkUrl, null, null, null, null);
+    }
+
     public String getLabel() {
         return label;
     }

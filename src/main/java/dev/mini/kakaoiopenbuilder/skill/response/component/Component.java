@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 )
 @JsonSubTypes({
         @JsonSubTypes.Type(value = SimpleText.class),
-        @JsonSubTypes.Type(value = SimpleImage.class)
+        @JsonSubTypes.Type(value = SimpleImage.class),
+        @JsonSubTypes.Type(value = BasicCard.class)
 })
 public class Component {
     private final String type;
