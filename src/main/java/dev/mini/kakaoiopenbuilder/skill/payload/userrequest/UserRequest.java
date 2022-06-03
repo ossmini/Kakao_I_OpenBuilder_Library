@@ -1,7 +1,5 @@
 package dev.mini.kakaoiopenbuilder.skill.payload.userrequest;
 
-import java.util.Objects;
-
 public class UserRequest {
     private String timezone;
     private Block block;
@@ -32,19 +30,6 @@ public class UserRequest {
 
     public User getUser() {
         return user;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UserRequest that = (UserRequest) o;
-        return Objects.equals(timezone, that.timezone) && Objects.equals(block, that.block) && Objects.equals(utterance, that.utterance) && Objects.equals(params, that.params) && Objects.equals(lang, that.lang) && Objects.equals(user, that.user);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(timezone, block, utterance, params, lang, user);
     }
 
     @Override

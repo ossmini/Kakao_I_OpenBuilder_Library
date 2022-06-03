@@ -1,7 +1,5 @@
 package dev.mini.kakaoiopenbuilder.skill.payload.intent;
 
-import java.util.Objects;
-
 public class Extra {
     private Reason reason;
     private Knowledge knowledge;
@@ -12,19 +10,6 @@ public class Extra {
 
     public Knowledge getKnowledge() {
         return knowledge;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Extra extra = (Extra) o;
-        return Objects.equals(reason, extra.reason) && Objects.equals(knowledge, extra.knowledge);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(reason, knowledge);
     }
 
     @Override
