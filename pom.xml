@@ -31,21 +31,21 @@
     </developers>
 
     <scm>
-        <url>https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library</url>
-        <connection>https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library.git</connection>
-        <developerConnection>https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library.git</developerConnection>
+        <url>https://github.com/ossmini/Kakao_I_OpenBuilder_Library</url>
+        <connection>https://github.com/ossmini/Kakao_I_OpenBuilder_Library.git</connection>
+        <developerConnection>https://github.com/ossmini/Kakao_I_OpenBuilder_Library.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>Github</system>
-        <url>https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library/issues</url>
+        <url>https://github.com/ossmini/Kakao_I_OpenBuilder_Library/issues</url>
     </issueManagement>
 
     <description>Kakao I OpenBuilder Library is the unofficial Kakao chatbot library</description>
 
     <ciManagement>
         <system>Github Actions</system>
-        <url>https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library/actions</url>
+        <url>https://github.com/ossmini/Kakao_I_OpenBuilder_Library/actions</url>
     </ciManagement>
 
     <properties>
@@ -63,7 +63,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library</url>
+            <url>https://maven.pkg.github.com/ossmini/Kakao_I_OpenBuilder_Library</url>
         </repository>
     </distributionManagement>
 
