@@ -7,29 +7,61 @@
 <dependency>
   <groupId>dev.mini</groupId>
   <artifactId>kakao-i-openbuilder</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 ### Gradle
 ```groovy
-implementation 'dev.mini:kakao-i-openbuilder:1.0.1'
+implementation 'dev.mini:kakao-i-openbuilder:1.0.2'
 ```
 
 ### Example
-There is an example code implementing this library, you can check it out over [here](https://github.com/ossmini/Kakao_ChatBot_Example).
 
-## Resources
-- [Kakao i Developers Docs](https://i.kakao.com/docs/getting-started-overview)
+```java
+static final String IMAGE_URL = "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg";
 
-## Contributing
-- [Submit bugs and feature requests](https://github.com/ossmini/Kakao_I_OpenBuilder_Library/issues)
+Template template = TemplateBuilder.builder()
+        .addSimpleText("Hello World")
+        .addSimpleImage(IMAGE_URL, "Hello World")
+        .build();
 
-## License
-Licensed under the [Apache-2.0](https://github.com/ossmini/Kakao_I_OpenBuilder_Library/blob/main/LICENSE) license.
-## Development
-### Build
+return SKillResponseBuilder.builder()
+        .addTemplate(template)
+        .build();
+```
+
+## Supported Skills (In progress)
+Skill |  Supported
+-- | -- 
+QuickReply | X
+SimpleText | O
+SimpleImage | O
+BasicCard | O
+CommerceCard | X
+ListCard | X
+ItemCard | X
+Thumbnail | O
+Button | O
+Forwardable | O
+CarouselHeader | O
+Profile | O
+Link | O
+</td>
+</tr>
+</table>
+
+## Build
 You need [Apache Maven](http://maven.apache.org/) to build the project:
 
 ```bash
 mvn clean install
 ```
+
+## References
+- [Kakao i Developers Docs](https://i.kakao.com/docs/getting-started-overview)
+
+## Contributing
+- [Check out the CONTRIBUTING.md](https://github.com/ossmini/Kakao_I_OpenBuilder_Library/blob/develop/CONTRIBUTING.md)
+
+## License
+Licensed under the [Apache-2.0](https://github.com/ossmini/Kakao_I_OpenBuilder_Library/blob/main/LICENSE) license.
