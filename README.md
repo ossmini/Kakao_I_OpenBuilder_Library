@@ -1,18 +1,38 @@
 # Kakao I OpenBuilder Java Library
 [![example workflow](https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library/actions/workflows/build.yml/badge.svg)](https://github.com/Sejong-OSS/Kakao_I_OpenBuilder_Library/actions/workflows/build.yml) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Sejong-OSS_Kakao_I_OpenBuilder_Library&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Sejong-OSS_Kakao_I_OpenBuilder_Library) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Sejong-OSS_Kakao_I_OpenBuilder_Library&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Sejong-OSS_Kakao_I_OpenBuilder_Library) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Sejong-OSS_Kakao_I_OpenBuilder_Library&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Sejong-OSS_Kakao_I_OpenBuilder_Library) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Sejong-OSS_Kakao_I_OpenBuilder_Library&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Sejong-OSS_Kakao_I_OpenBuilder_Library)
+> It is currently deployed in the Github Package Registry and JitPack.  
+> We recommend JitPack because Github Package Registry requires Github Token provided by the administrator.
 
 ## Getting Started
+> The Getting Started below is based on JitPack.
+
 ### Maven
 ```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+```xml
 <dependency>
-  <groupId>dev.mini</groupId>
-  <artifactId>kakao-i-openbuilder</artifactId>
-  <version>1.0.2</version>
+    <groupId>com.github.ossmini</groupId>
+    <artifactId>Kakao_I_OpenBuilder_Library</artifactId>
+    <version>Tag</version>
 </dependency>
 ```
 ### Gradle
-```groovy
-implementation 'dev.mini:kakao-i-openbuilder:1.0.2'
+```gradle
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+```gradle
+implementation 'com.github.ossmini:Kakao_I_OpenBuilder_Library:Tag'
 ```
 
 ### Example
@@ -31,24 +51,21 @@ return SKillResponseBuilder.builder()
 ```
 
 ## Supported Skills (In progress)
-Skill |  Supported
--- | -- 
-QuickReply | X
-SimpleText | O
-SimpleImage | O
-BasicCard | O
-CommerceCard | X
-ListCard | X
-ItemCard | X
-Thumbnail | O
-Button | O
-Forwardable | O
-CarouselHeader | O
-Profile | O
-Link | O
-</td>
-</tr>
-</table>
+| Skill | Supported |
+| -- | :--: |
+| QuickReply | X |
+| SimpleText | O |
+| SimpleImage | O |
+| BasicCard | O |
+| CommerceCard | X |
+| ListCard | X |
+| ItemCard | X |
+| Thumbnail | O |
+| Button | O |
+| Forwardable | O |
+| CarouselHeader | O |
+| Profile | O |
+| Link | O |
 
 ## Build
 You need [Apache Maven](http://maven.apache.org/) to build the project:
